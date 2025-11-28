@@ -3,66 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eren Çetin | IT & Yazılım</title>
+    <title>Eren Çetin | IT & Cyber Security</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- GENEL AYARLAR --- */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --accent-color: #00ff41; /* Hacker Yeşili */
+            --secondary-bg: #111;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace; /* Yazılımcı Fontu */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER (Üst Menü) --- */
+        header {
+            padding: 20px 50px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            height: 100vh;
-            margin: 0;
+            position: fixed;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
         }
-        .card {
-            background: #1e1e1e;
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            max-width: 350px;
-            width: 90%;
-            border: 1px solid #333;
-        }
+
         .logo {
-            width: 80px;
-            height: 80px;
-            background: #ff9800;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
+            font-size: 24px;
             font-weight: bold;
-            color: #121212;
+            color: var(--accent-color);
+            letter-spacing: -1px;
         }
-        h1 { margin: 10px 0 5px; font-size: 24px; }
-        p { color: #aaa; font-size: 14px; margin-bottom: 25px; }
-        .btn {
-            display: block;
-            background: #333;
-            color: #fff;
-            padding: 12px;
-            margin: 10px 0;
-            text-decoration: none;
+
+        nav ul { display: flex; gap: 30px; }
+        nav a:hover { color: var(--accent-color); text-shadow: 0 0 10px var(--accent-color); }
+
+        /* --- HERO BÖLÜMÜ (Giriş) --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        
+        .hero h1 span { color: var(--accent-color); }
+
+        .typewriter {
+            font-size: 1.5rem;
+            color: #888;
+            border-right: 2px solid var(--accent-color);
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        /* --- YETENEKLER --- */
+        .section {
+            padding: 80px 10%;
+            border-top: 1px solid #222;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+            display: inline-block;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 5px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border: 1px solid #333;
             border-radius: 8px;
+            text-align: center;
             transition: 0.3s;
         }
-        .btn:hover { background: #ff9800; color: #000; }
+
+        .skill-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.1);
+        }
+
+        .skill-card i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* --- İLETİŞİM BUTONU --- */
+        .btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            background: transparent;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            color: #000;
+            box-shadow: 0 0 20px var(--accent-color);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #222;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .typewriter { font-size: 1rem; }
+            nav { display: none; } /* Mobilde menüyü gizledik sade olsun diye */
+        }
+
+        /* Animasyonlar */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--accent-color); }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="logo">EÇ</div>
-        <h1>Eren Çetin</h1>
-        <p>Bilgisayar Programcılığı | IT Specialist</p>
-        <p style="font-size: 13px; line-height: 1.5; color: #ccc;">
-            Merhaba, web teknolojileri ve siber güvenlik üzerine çalışmalar yapıyorum.
+
+    <header>
+        <div class="logo">&lt;EÇ/&gt;</div>
+        <nav>
+            <ul>
+                <li><a href="#home">/home</a></li>
+                <li><a href="#about">/hakkımda</a></li>
+                <li><a href="#skills">/yetenekler</a></li>
+                <li><a href="#contact">/iletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>EREN <span>ÇETİN</span></h1>
+        <div class="typewriter">IT Specialist | Cyber Security Enthusiast</div>
+        <a href="#contact" class="btn">Bana Ulaş</a>
+    </section>
+
+    <section class="section" id="about">
+        <h2 class="section-title">01. Hakkımda</h2>
+        <p>
+            Merhaba, ben Eren. Atatürk Üniversitesi Bilgisayar Programcılığı öğrencisiyim ve profesyonel olarak bir şirkette IT departmanında görev alıyorum. 
+            <br><br>
+            Ağ yönetimi, donanım desteği ve B2B sistemleri üzerine çalışırken, aynı zamanda <strong>Siber Güvenlik</strong> ve <strong>Kali Linux</strong> üzerine kendimi geliştiriyorum. Teknolojinin karanlık tarafını aydınlatmayı ve güvenli sistemler inşa etmeyi hedefliyorum.
         </p>
-        <a href="mailto:iletisim@erencetin.tr" class="btn">Bana Ulaşın</a>
-        <a href="https://github.com/Erentr3460" class="btn" target="_blank">GitHub Profilim</a>
-    </div>
+    </section>
+
+    <section class="section" id="skills">
+        <h2 class="section-title">02. Yetenekler</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fab fa-linux"></i>
+                <h3>Kali Linux</h3>
+                <p>Sistem Yönetimi & Güvenlik</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-network-wired"></i>
+                <h3>IT Support</h3>
+                <p>Donanım & Ağ Çözümleri</p>
+            </div>
+            <div class="skill-card">
+                <i class="fab fa-html5"></i>
+                <h3>Web Dev</h3>
+                <p>HTML / CSS / WordPress</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Cyber Sec</h3>
+                <p>Penetration Testing (Öğreniyor)</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact" style="text-align: center;">
+        <h2 class="section-title">03. İletişim</h2>
+        <p style="margin-bottom: 20px;">
+            Projeleriniz veya iş birlikleri için bana e-posta üzerinden ulaşabilirsiniz.
+        </p>
+        <a href="mailto:iletisim@erencetin.tr" class="btn">iletisim@erencetin.tr</a>
+        
+        <div style="margin-top: 50px; font-size: 24px;">
+            <a href="https://github.com/Erentr3460" target="_blank" style="margin: 0 10px;"><i class="fab fa-github"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-linkedin"></i></a>
+            <a href="#" style="margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>System.out.println("Designed by Eren Çetin © 2025");</p>
+    </footer>
+
 </body>
 </html>
