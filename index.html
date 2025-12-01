@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eren Çetin | IT & Design Portfolio</title>
+    <title>Eren Çetin | Digital Solutions Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -111,9 +111,10 @@
             border: 1px solid var(--accent-color);
             display: inline-block; padding: 5px 15px; border-radius: 20px;
             background: rgba(0,255,65,0.05);
+            font-weight: bold;
         }
 
-        .bio { max-width: 650px; margin: 0 auto 30px; color: var(--text-secondary); font-size: 0.95rem;}
+        .bio { max-width: 700px; margin: 0 auto 30px; color: var(--text-secondary); font-size: 0.95rem; }
 
         /* --- TIMELINE GRID --- */
         .section-title {
@@ -160,6 +161,38 @@
         .skill-tag i { color: var(--accent-color); }
         .skill-tag:hover i { color: #000; }
 
+        /* --- MAP SECTION (DARK MODE EFFECT) --- */
+        .map-container {
+            width: 100%;
+            height: 350px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            /* Haritayı karartmak ve yeşil yapmak için özel filtre */
+            filter: invert(100%) hue-rotate(180deg) brightness(0.85) contrast(1.1);
+        }
+
+        .location-tag {
+            position: absolute;
+            top: 15px; left: 15px;
+            background: #000;
+            color: var(--accent-color);
+            padding: 5px 12px;
+            border: 1px solid var(--accent-color);
+            font-size: 0.8rem;
+            z-index: 10;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0,0,0,0.8);
+        }
+
         /* --- CONTACT --- */
         .btn-primary {
             display: inline-block; padding: 14px 35px;
@@ -186,7 +219,7 @@
     <div class="container" id="main-content">
         
         <header>
-            <div class="logo">E.CETIN<span>_V5</span></div>
+            <div class="logo">E.CETIN<span>_V8</span></div>
             <nav>
                 <a href="#about">~/profil</a>
                 <a href="#experience">~/kariyer</a>
@@ -198,13 +231,12 @@
             <img src="https://via.placeholder.com/150/000000/00ff41?text=EC" alt="Eren Çetin" class="profile-img">
             
             <h1>EREN ÇETİN</h1>
-            <div class="subtitle">IT SPECIALIST & GRAPHIC DESIGNER</div>
+            <div class="subtitle">IT OPERASYONLARI & DİJİTAL TASARIM UZMANI</div>
             
             <p class="bio">
-                Teknoloji ve sanatın kesişim noktasında yer alıyorum. 
-                Bir yandan <strong>kurumsal bir şirkette IT süreçlerini</strong> yönetip gerçek hayat tecrübesi kazanırken, 
-                diğer yandan <strong>Bilgisayar Programcılığı</strong> eğitimime devam ediyorum. 
-                "Alaylı" tecrübesini "Mektepli" bilgisiyle birleştiriyorum.
+                Teknolojinin mutfağında (IT Altyapı) ve vitrininde (Görsel Tasarım) eş zamanlı rol alıyorum. 
+                Kurumsal bir şirkette sistem güvenliği ve operasyonel süreçleri yönetirken, markalar için özgün görsel kimlikler tasarlıyorum. 
+                <strong>Disiplinli iş ahlakı, analitik düşünce yapısı ve yaratıcı vizyon.</strong>
             </p>
 
             <div style="font-size: 1.5rem; margin-top: 20px;">
@@ -214,50 +246,58 @@
             </div>
         </div>
 
-        <h2 class="section-title" id="experience">KARİYER & EĞİTİM YOLCULUĞU</h2>
+        <h2 class="section-title" id="experience">PROFESYONEL YOLCULUK</h2>
         <div class="timeline-grid">
             
             <div class="card">
                 <div class="card-header">
-                    <span class="role">IT Sorumlusu & Tasarım</span>
+                    <span class="role">IT Specialist & Visual Designer</span>
                     <span class="date">1 Yıl - Devam Ediyor</span>
                 </div>
-                <span class="company">Kurumsal Teknoloji Şirketi (Gizli)</span>
+                <span class="company">Özel Sektör (Kurumsal Teknoloji)</span>
                 <p style="color: #aaa; font-size: 0.9rem;">
-                    • Şirketin tüm IT altyapısı, ağ güvenliği ve donanım desteğinin sağlanması.<br>
-                    • Kurumsal kimlik çalışmaları, logo tasarımı ve görsel materyallerin üretimi.<br>
-                    • B2B sistemlerinin (Web & E-Ticaret) teknik takibi.
+                    • <strong>Sistem Yönetimi:</strong> Şirket içi ağ, sunucu ve donanım altyapısının kesintisiz yönetimi ve güvenliği.<br>
+                    • <strong>Dijital Varlık Yönetimi:</strong> B2B e-ticaret panellerinin (Ikas) optimizasyonu ve yönetimi.<br>
+                    • <strong>Görsel İletişim:</strong> Kurumsal kimlik materyallerinin tasarımı ve ürün görselleştirme süreçleri.
                 </p>
             </div>
 
             <div class="card">
                 <div class="card-header">
                     <span class="role">Bilgisayar Programcılığı</span>
-                    <span class="date">Öğrenci</span>
+                    <span class="date">Aktif Öğrenci</span>
                 </div>
-                <span class="company">Atatürk Üniversitesi (Açıköğretim)</span>
+                <span class="company">Atatürk Üniversitesi (Uzaktan Eğitim)</span>
                 <p style="color: #aaa; font-size: 0.9rem;">
-                    • Uzaktan eğitim modeli ile iş hayatıyla eş zamanlı akademik gelişim.<br>
-                    • Algoritma, Veritabanı Yönetimi ve Web Teknolojileri üzerine eğitim.<br>
-                    • Hedef: Yazılım ve Sistem güvenliği alanında uzmanlaşmak.
+                    • İş hayatıyla entegre, disiplinli bir akademik süreç.<br>
+                    • Yazılım geliştirme metodolojileri, Veritabanı Mimarisi ve Web Teknolojileri üzerine uzmanlaşma.<br>
+                    • Teorik bilgiyi sahadaki pratik problemlerle birleştirme vizyonu.
                 </p>
             </div>
         </div>
 
-        <h2 class="section-title">TEKNİK ENVANTER</h2>
+        <h2 class="section-title">TEKNİK & YARATICI YETKİNLİKLER</h2>
         <div class="skills-wrapper">
-            <div class="skill-tag"><i class="fas fa-server"></i> IT Operations</div>
-            <div class="skill-tag"><i class="fas fa-pen-nib"></i> Graphic Design</div>
+            <div class="skill-tag"><i class="fas fa-server"></i> IT Altyapı Yönetimi</div>
+            <div class="skill-tag"><i class="fas fa-pen-nib"></i> Kurumsal Grafik Tasarım</div>
             <div class="skill-tag"><i class="fas fa-bezier-curve"></i> Adobe Illustrator</div>
             <div class="skill-tag"><i class="fas fa-image"></i> Adobe Photoshop</div>
-            <div class="skill-tag"><i class="fas fa-network-wired"></i> Network Admin</div>
-            <div class="skill-tag"><i class="fab fa-linux"></i> Kali Linux</div>
-            <div class="skill-tag"><i class="fas fa-code"></i> Web Management</div>
+            <div class="skill-tag"><i class="fas fa-shield-alt"></i> Siber Güvenlik (Kali)</div>
+            <div class="skill-tag"><i class="fas fa-shopping-cart"></i> E-Ticaret Yönetimi</div>
+        </div>
+
+        <h2 class="section-title">HİZMET BÖLGESİ</h2>
+        <div class="map-container">
+            <div class="location-tag">📍 ISTANBUL / EUROPEAN SIDE (AVRUPA YAKASI)</div>
+            <iframe 
+                src="https://maps.google.com/maps?q=Istanbul+Avrupa+Yakasi&t=&z=10&ie=UTF8&iwloc=&output=embed" 
+                loading="lazy">
+            </iframe>
         </div>
 
         <div style="text-align: center; margin-top: 50px;" id="contact">
-            <h3 style="color: #fff; margin-bottom: 20px;">Profesyonel çözüm mü arıyorsunuz?</h3>
-            <a href="mailto:eren@erencetin.com" class="btn-primary">İLETİŞİME GEÇ</a>
+            <h3 style="color: #fff; margin-bottom: 20px;">Teknik veya Yaratıcı Çözümler İçin</h3>
+            <a href="mailto:eren@erencetin.com" class="btn-primary">İLETİŞİM KUR</a>
         </div>
 
         <footer>
@@ -267,16 +307,16 @@
     </div>
 
     <script>
-        // --- GÜVENLİ BOOT SİSTEMİ (BLACK SCREEN FIX) ---
+        // --- BOOT SCRIPT (GÜVENLİ AÇILIŞ) ---
         const bootScreen = document.getElementById('boot-screen');
         const mainContent = document.getElementById('main-content');
         
         const logs = [
-            "Initializing System...",
-            "Loading Graphic Modules... OK",
-            "Checking Network Config... OK",
-            "User Identity: Eren Çetin",
-            "Role: IT Specialist & Designer",
+            "System Initialization...",
+            "Loading Modules... OK",
+            "Verifying Security Protocols... OK",
+            "Identity: Eren Çetin (IT & Design)",
+            "Region: Istanbul/Europe... Active",
             "Access Granted."
         ];
 
@@ -302,11 +342,9 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             printLog();
-            // EMNİYET SİBOBU: Eğer bir hata olur da açılmazsa 3 sn sonra zorla aç.
+            // GÜVENLİK SİGORTASI: Eğer 3 saniye içinde açılmazsa zorla aç
             setTimeout(() => {
-                if(mainContent.style.display !== 'block') {
-                    finishBoot();
-                }
+                if(mainContent.style.display !== 'block') finishBoot();
             }, 3000);
         });
 
@@ -314,21 +352,16 @@
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
         
-        function resize() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
+        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
         window.addEventListener('resize', resize);
         resize();
 
         const particles = [];
-        const particleCount = 50; 
-
         class Particle {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.5; // Hız düşürüldü, daha sakin
+                this.vx = (Math.random() - 0.5) * 0.5;
                 this.vy = (Math.random() - 0.5) * 0.5;
                 this.size = Math.random() * 2;
             }
@@ -344,14 +377,12 @@
                 ctx.fill();
             }
         }
-
-        for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+        for (let i = 0; i < 50; i++) particles.push(new Particle());
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             particles.forEach((p, index) => {
-                p.update();
-                p.draw();
+                p.update(); p.draw();
                 for (let j = index; j < particles.length; j++) {
                     const dx = p.x - particles[j].x;
                     const dy = p.y - particles[j].y;
@@ -359,10 +390,7 @@
                     if (dist < 120) {
                         ctx.strokeStyle = `rgba(0, 255, 65, ${0.15 - dist/800})`;
                         ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(p.x, p.y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke();
                     }
                 }
             });
