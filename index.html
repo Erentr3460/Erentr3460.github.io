@@ -80,8 +80,13 @@
         /* --- SIDEBAR --- */
         .sidebar {
             position: sticky; top: 0; height: 100vh;
-            display: flex; flex-direction: column; justify-content: center; padding: 60px 0;
+            display: flex; flex-direction: column; justify-content: center; padding: 40px 0;
+            /* Küçük ekranlarda sidebar taşarsa scroll çıksın diye: */
+            overflow-y: auto; 
+            /* Scroll barı gizle (opsiyonel, şık durması için) */
+            scrollbar-width: none; 
         }
+        .sidebar::-webkit-scrollbar { display: none; }
         
         .profile-card {
             padding: 50px 30px;
@@ -90,6 +95,7 @@
             backdrop-filter: blur(20px); border-radius: 16px; position: relative; overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.6);
             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+            width: 100%; /* Kapsayıcıya tam otur */
         }
         
         .profile-card::after {
@@ -97,15 +103,27 @@
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
 
+        /* --- RESPONSIVE AVATAR (GÜNCELLENDİ) --- */
         .avatar-box {
-            width: 150px; height: 150px; border-radius: 50%; margin-bottom: 30px;
-            margin-left: auto; margin-right: auto;
+            /* Sabit pixel yerine responsive genişlik */
+            width: 150px; 
+            height: 150px;
+            max-width: 100%;
+            /* Oranı kilitle */
+            aspect-ratio: 1 / 1; 
+            
+            margin-bottom: 30px; margin-left: auto; margin-right: auto;
             position: relative; padding: 0;
             background: #000; transition: 0.5s var(--ease-smooth); overflow: hidden;
             border: 2px solid var(--accent); box-shadow: 0 0 25px var(--accent-dim);
+            border-radius: 50%;
         }
         .avatar-box img {
-            width: 100%; height: 100%; border-radius: 50%; object-fit: cover; filter: none;
+            width: 100%; height: 100%; 
+            border-radius: 50%; 
+            object-fit: cover; /* Resmi daireye tam sığdır */
+            object-position: center; /* Ortala */
+            filter: none;
             transition: 0.5s var(--ease-smooth);
         }
         .profile-card:hover .avatar-box { transform: scale(1.05); box-shadow: 0 0 50px var(--accent-dim); }
@@ -117,7 +135,8 @@
         }
         
         h1 { 
-            font-size: 4rem; line-height: 1.1; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px;
+            font-size: 3.5rem; /* Biraz küçültüldü taşmayı önlemek için */
+            line-height: 1.1; font-weight: 800; margin-bottom: 25px; letter-spacing: -1px;
             text-align: center; width: 100%; display: block;
         }
         
@@ -188,6 +207,7 @@
         .map-container:hover { filter: invert(95%) contrast(1.1) hue-rotate(120deg); border-color: var(--accent); }
         .map-container iframe { width: 100%; height: 100%; border: none; }
 
+        /* --- RESPONSIVE DÜZENLEMELER --- */
         @media (max-width: 1024px) {
             .main-wrapper { grid-template-columns: 1fr; gap: 0; padding: 0 20px; }
             .sidebar { position: relative; height: auto; padding: 80px 0 20px; background: none; }
@@ -196,6 +216,9 @@
             .grid-row { grid-template-columns: 1fr; }
             .char { font-size: 2.5rem; }
             h1 { font-size: 3rem; }
+            
+            /* Mobilde avatar biraz daha küçülsün */
+            .avatar-box { width: 120px; height: 120px; }
         }
     </style>
 </head>
