@@ -26,7 +26,7 @@
         ::-webkit-scrollbar-track { background: var(--dark); }
         ::-webkit-scrollbar-thumb { background: var(--blue); border-radius: 10px; border: 3px solid var(--dark); }
 
-        /* --- NAVIGASYON (BÜYÜK LOGO) --- */
+        /* --- NAVIGASYON --- */
         header {
             position: fixed; width: 100%; height: 130px;
             display: flex; justify-content: space-between; align-items: center;
@@ -54,22 +54,21 @@
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)), 
                         url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070') center/cover;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            padding-top: 130px;
         }
         .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; text-transform: uppercase; }
         .hero p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin-bottom: 45px; padding: 0 20px; }
         
-        /* --- SOSYAL MEDYA (JİLET HİZALAMA) --- */
+        /* --- SOSYAL MEDYA İKONLARI --- */
         .social-links { display: flex; gap: 20px; justify-content: center; align-items: center; }
         .social-link {
             width: 60px; height: 60px; border: 2px solid rgba(255,255,255,0.3);
             border-radius: 50%; 
-            display: grid; place-items: center; /* İkonu kalbine oturtur */
+            display: grid; place-items: center; 
             color: var(--white); text-decoration: none; transition: 0.4s; font-size: 1.5rem;
         }
         .social-link:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,102,255,0.4); }
 
-        /* --- PROJELER (SADECE RESİM) --- */
+        /* --- PROJELER --- */
         .projects-section { padding: 120px 8%; background: var(--surface); }
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 25px; }
         .project-card { position: relative; height: 500px; overflow: hidden; border-radius: 8px; background: #111; }
@@ -83,17 +82,16 @@
         .footer-info h4 { margin-bottom: 25px; color: var(--blue); text-transform: uppercase; letter-spacing: 1px; font-weight: 900; }
         .footer-info p { color: var(--text-gray); font-size: 1rem; line-height: 1.8; margin-bottom: 12px; }
         
-        .f-bottom { border-top: 1px solid #111; padding-top: 40px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #333; font-weight: 700; letter-spacing: 2px; }
+        .f-bottom { border-top: 1px solid #111; padding-top: 40px; text-align: center; font-size: 0.85rem; color: #333; font-weight: 700; letter-spacing: 2px; }
 
         /* --- MOBİL UYUMLULUK --- */
         @media (max-width: 768px) {
-            header { height: 100px; padding: 0 3%; }
-            .logo-box { padding: 10px 20px; gap: 10px; }
+            header { height: 100px; }
+            .logo-box { padding: 10px 20px; }
             .logo-box img { height: 50px; }
             .logo-box span { font-size: 1.2rem; }
             nav { display: none; }
             .hero h1 { font-size: 2.8rem; }
-            .f-bottom { flex-direction: column; text-align: center; gap: 15px; }
         }
     </style>
 </head>
@@ -106,7 +104,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#home">GİRİŞ</a></li>
+                <li><a href="#home">ANASAYFA</a></li>
                 <li><a href="#projects">PROJELER</a></li>
                 <li><a href="#contact">İLETİŞİM</a></li>
             </ul>
@@ -115,7 +113,7 @@
 
     <section class="hero" id="home">
         <h1>GÜÇLÜ YAPI<br><span style="color: var(--blue);">SAĞLAM GELECEK</span></h1>
-        <p>Mühendislik disiplini ve modern mimari ile şehrin silüetini yeniden inşa ediyoruz.</p>
+        <p>Sert Yapı olarak mühendislikte mükemmelliği ve mimaride estetiği birleştiriyoruz.</p>
         <div class="social-links">
             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
@@ -148,7 +146,7 @@
             </div>
             <div class="footer-info">
                 <h4>BİZE ULAŞIN</h4>
-                <p>İkitelli OSB Mah. Aykosan Çarşı Blok No: 1/1, Başakşehir / İSTANBUL</p>
+                <p>Altınşehir Mah. Gülgün Sok. No: 39/41 İç Kapı No: 2, Başakşehir / İSTANBUL</p>
                 <p>info@sertyapi.com | +90 (212) 000 00 00</p>
             </div>
             <div class="footer-info">
@@ -162,7 +160,6 @@
         </div>
         <div class="f-bottom">
             <p>&copy; 2026 SERT YAPI İNŞAAT | TÜM HAKLARI SAKLIDIR</p>
-            <p>DESIGNED BY EREN CETIN</p>
         </div>
     </footer>
 
